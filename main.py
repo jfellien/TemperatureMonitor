@@ -30,7 +30,7 @@ def show_temperature(temperature):
         epd.update_screen()
 
         print(title)
-        print(temperature_value)
+        print(temperature)
 
 def get_current_temperature():
         file = open('/sys/bus/w1/devices/28-01d54c07010c/w1_slave')
