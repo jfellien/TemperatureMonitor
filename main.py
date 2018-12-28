@@ -22,7 +22,7 @@ def get_time():
 def show_temperature(temperature):
         epd.set_title('Temperatur um ' + get_time() + ':')
 
-        epd.add_text_middle(60, str(temperature) + " °C", FONT_BIG, BLACK)
+        epd.add_text_middle(60, str(temperature) + "°C", FONT_BIG, BLACK)
 
         epd.update_screen()
 
