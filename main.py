@@ -1,10 +1,13 @@
 from PIL import ImageFont
+from datetime import datetime
+
 import os, sys, time
 
 import EPD.epdAPI as EPD
 
 FONT_PATH      = './EPD/fonts/DroidSans.ttf'
 FONT_BIG       = ImageFont.truetype(FONT_PATH, 72)
+FONT_SMALL     = ImageFont.truetype(FONT_PATH, 12)
 
 BLACK = 0
 
@@ -14,6 +17,8 @@ def show_temperature(temperature):
         epd.set_title("Aktuelle Temperatur")
 
         epd.add_text_middle(60, str(temperature) + " °C", FONT_BIG, BLACK)
+
+        epd.add_text_middle(140, datetime.now().time(), FONT_SMALL, BLACK)
 
         epd.update_screen()
 
@@ -27,6 +32,7 @@ def get_current_temperature():
 
         rueckgabewert = '%6.1f' % temperature 
         return(rueckgabewert)
+
 
 temperature = get_current_temperature()
 show_temperature(temperature)
