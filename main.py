@@ -25,7 +25,7 @@ def get_current_temperature():
         stringvalue = filecontent.split("\n")[1].split(" ")[9]
         temperature = float(stringvalue[2:]) / 1000
 
-        rueckgabewert = '%6.2f' % temperature 
+        rueckgabewert = '%6.1f' % temperature 
         return(rueckgabewert)
 
 temperature = get_current_temperature()
