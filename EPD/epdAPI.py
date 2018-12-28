@@ -6,7 +6,7 @@ Github: https://github.com/lyoko17220/ePaperLibrary
 
 from PIL import Image, ImageFont, ImageDraw, ImageChops
 
-import epd2in7
+import EPD.epd2in7
 
 # Default font
 FONT_PATH            = './font/C64_Mono.ttf'

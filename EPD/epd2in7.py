@@ -26,7 +26,7 @@
 
 import RPi.GPIO as GPIO
 
-import waveshare_library.epdif as epdif
+import EPD.epdif as epdif
 
 # Display resolution
 EPD_WIDTH       = 176

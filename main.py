@@ -1,6 +1,6 @@
 from PIL import ImageFont
 
-import EPD.epsimplelib
+import EPD.epdAPI
 
 FONT_PATH      = './font/FreeMonoBold.ttf'
 FONT_BIG       = ImageFont.truetype(FONT_PATH, 72)
