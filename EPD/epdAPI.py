@@ -6,7 +6,7 @@ Github: https://github.com/lyoko17220/ePaperLibrary
 
 from PIL import Image, ImageFont, ImageDraw, ImageChops
 
-import EPD.epd2in7
+import EPD.epd2in7 as epd2in7
 
 # Default font
 FONT_PATH            = './EPD/fonts/C64_Mono.ttf'
@@ -30,7 +30,7 @@ class EPScreen():
 	"""
 
 	def __init__(self, screen_orientation):
-		self.device = waveshare_library.epd2in7.EPD()
+		self.device = epd2in7.EPD()
 		self.device.init()
 
 		self.width = None
