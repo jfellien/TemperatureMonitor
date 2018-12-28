@@ -13,12 +13,16 @@ BLACK = 0
 
 epd = EPD.EPScreen('landscape')
 
+def get_time():
+        full_time = datetime.now().time()
+        short_time = str(full_time.hour) + ':' + str(full_time.minute)
+        
+        return(short_time)
+
 def show_temperature(temperature):
-        epd.set_title("Aktuelle Temperatur")
+        epd.set_title('Temperatur um ' + get_time() + ':')
 
         epd.add_text_middle(60, str(temperature) + " °C", FONT_BIG, BLACK)
-
-        epd.add_text_middle(140, datetime.now().time(), FONT_SMALL, BLACK)
 
         epd.update_screen()
 
