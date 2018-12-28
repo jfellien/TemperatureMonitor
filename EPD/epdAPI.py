@@ -9,7 +9,7 @@ from PIL import Image, ImageFont, ImageDraw, ImageChops
 import EPD.epd2in7 as epd2in7
 
 # Default font
-FONT_PATH            = './EPD/fonts/C64_Mono.ttf'
+FONT_PATH            = './EPD/fonts/DroidSans.ttf'
 FONT_SMALL_MAX       = ImageFont.truetype(FONT_PATH, 12)
 FONT_SMALL           = ImageFont.truetype(FONT_PATH, 14)
 FONT_NORMAL          = ImageFont.truetype(FONT_PATH, 18)
