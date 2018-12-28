@@ -2,7 +2,7 @@ from PIL import ImageFont
 
 import EPD.epdAPI
 
-FONT_PATH      = './font/FreeMonoBold.ttf'
+FONT_PATH      = './EPD/fonts/DroidSans.ttf'
 FONT_BIG       = ImageFont.truetype(FONT_PATH, 72)
 
 BLACK = 0
