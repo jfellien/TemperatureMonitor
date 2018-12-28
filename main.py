@@ -20,11 +20,16 @@ def get_time():
         return(short_time)
 
 def show_temperature(temperature):
-        epd.set_title('Temperatur um ' + get_time() + ':')
+        title = 'Temperatur um ' + get_time() + ':'
+        temperature_value = str(temperature) + "°C"
 
-        epd.add_text_middle(60, str(temperature) + "°C", FONT_BIG, BLACK)
+        epd.set_title(title)
+
+        epd.add_text_middle(60, temperature_value, FONT_BIG, BLACK)
 
         epd.update_screen()
+
+        print(title + temperature_value)
 
 def get_current_temperature():
         file = open('/sys/bus/w1/devices/28-01d54c07010c/w1_slave')
