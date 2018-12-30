@@ -33,7 +33,7 @@ def get_current_temperature():
 def show_temperature():
         temperature = get_current_temperature()
 
-        title = 'Temperatur um ' + get_time() + ':'
+        title = 'Temperatur um ' + get_time()
         temperature_value = str(temperature) + "°C"
 
         epd.set_title(title)
