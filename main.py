@@ -16,11 +16,22 @@ epd = EPD.EPScreen('landscape')
 
 def get_time():
         full_time = datetime.now().time()
-        short_time = str(full_time.hour) + ':' + str(full_time.minute)
+        hour = str(full_time.hour)
+        minute = "{:02d}".format(full_time.minute)
+        short_time = hour + ':' + minute
         
         return(short_time)
 
-def show_temperature(temperature):
+def get_current_temperature():
+        sensor = W1ThermSensor()
+
+        temperature_in_celsius = sensor.get_temperature()
+
+        return(temperature_in_celsius)
+
+def show_temperature():
+        temperature = get_current_temperature()
+
         title = 'Temperatur um ' + get_time() + ':'
         temperature_value = str(temperature) + "°C"
 
@@ -33,25 +44,5 @@ def show_temperature(temperature):
         print(title)
         print(temperature)
 
-def get_current_temperature():
-        file = open('/sys/bus/w1/devices/28-01d54c07010c/w1_slave')
-        filecontent = file.read()
-        file.close()
 
-        stringvalue = filecontent.split("\n")[1].split(" ")[9]
-        temperature = float(stringvalue[2:]) / 1000
-
-        rueckgabewert = '%6.1f' % temperature
-        return(rueckgabewert)
-
-def get_current_temperature_from_library():
-        sensor = W1ThermSensor()
-
-        temperature_in_celsius = sensor.get_temperature()
-
-        return(temperature_in_celsius)
-
-temperature = get_current_temperature()
-print(str(get_current_temperature_from_library()))
-
-show_temperature(temperature)
+show_temperature()
