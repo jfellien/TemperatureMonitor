@@ -25,9 +25,10 @@ def get_time():
 def get_current_temperature():
         sensor = W1ThermSensor()
 
-        temperature_in_celsius = sensor.get_temperature()
+        temperature = sensor.get_temperature()
+        temperature_formated = "{:3.1f}".format(temperature)
 
-        return(temperature_in_celsius)
+        return(temperature_formated)
 
 def show_temperature():
         temperature = get_current_temperature()
