@@ -45,5 +45,6 @@ def show_temperature():
         print(title)
         print(temperature)
 
-
-show_temperature()
+while True:
+        show_temperature()
+        time.sleep(10)
