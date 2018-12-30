@@ -1,5 +1,6 @@
 from PIL import ImageFont
 from datetime import datetime
+from w1thermsensor import W1ThermSensor
 
 import os, sys, time
 
@@ -40,9 +41,17 @@ def get_current_temperature():
         stringvalue = filecontent.split("\n")[1].split(" ")[9]
         temperature = float(stringvalue[2:]) / 1000
 
-        rueckgabewert = '%6.1f' % temperature 
+        rueckgabewert = '%6.1f' % temperature
         return(rueckgabewert)
 
+def get_current_temperature_from_library():
+        sensor = W1ThermSensor()
+
+        temperature_in_celsius = sensor.get_temperature()
+
+        return(temperature_in_celsius)
 
 temperature = get_current_temperature()
+print(str(get_current_temperature_from_library()))
+
 show_temperature(temperature)
